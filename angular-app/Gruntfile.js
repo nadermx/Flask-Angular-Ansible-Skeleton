@@ -372,6 +372,25 @@ module.exports = function (grunt) {
             }
         },
 
+        replace: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.dist %>/templates/',
+                    src: 'index.html',
+                    dest: '<%= yeoman.dist %>/templates/'
+                }],
+                options: {
+                    replacements: [
+                        {
+                            pattern: /src="scripts/g,
+                            replacement: 'src="/static/scripts'
+                        }
+                    ]
+                }
+            }
+        },
+
         ngtemplates: {
             dist: {
                 options: {
@@ -508,7 +527,8 @@ module.exports = function (grunt) {
         'uglify',
         'filerev',
         'usemin',
-        'htmlmin'
+        'htmlmin',
+        'replace'
     ]);
 
     grunt.registerTask('default', [
