@@ -3,6 +3,7 @@ Flask Blueprints PonyOrm Skeleton app python3.4.3
 
 #TODO
 User Login
+Add in Ansible playbook
 
 ## Angular App
 
