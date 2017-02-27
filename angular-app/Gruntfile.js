@@ -372,7 +372,7 @@ module.exports = function (grunt) {
             }
         },
 
-        replace: {
+        'string-replace': {
             dist: {
                 files: [{
                     expand: true,
@@ -385,6 +385,9 @@ module.exports = function (grunt) {
                         {
                             pattern: /src="scripts/g,
                             replacement: 'src="/static/scripts'
+                        }, {
+                            pattern: /href="styles/g,
+                            replacement: 'href="/static/styles'
                         }
                     ]
                 }
@@ -527,8 +530,8 @@ module.exports = function (grunt) {
         'uglify',
         'filerev',
         'usemin',
-        'htmlmin',
-        'replace'
+        'string-replace',
+        'htmlmin'
     ]);
 
     grunt.registerTask('default', [
